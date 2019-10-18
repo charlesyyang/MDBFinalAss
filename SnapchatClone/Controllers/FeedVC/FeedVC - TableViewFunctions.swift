@@ -43,8 +43,8 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         var index = indexPath[1]
         selectedImage = arrayOfSnaps[index]
         if !selectedImage.opened {
-            changeColors(vcDelegate1) // PART 3 CODE
-            changeColors(vcDelegate2) // PART 3 CODE
+            changeColors(vcDelegate1).extend(FeedVC) // PART 3 CODE
+            changeColors(vcDelegate2).extend(FeedVC) // PART 3 CODE
             performSegue(withIdentifier: "toShowImage", sender: self)
         }
         selectedImage.opened = true
@@ -53,6 +53,15 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
     
     func changeColors(_ vcDel : VCDelegate) {
         // vcDel.toggleColor() // PART 3 CODE
+        if navBarColorSwitched {
+            navBarColorSwitched = false
+            navigationController?.navigationBar.barTintColor = UIColor.yellow
+            LoginVC.backgroundColor = UIColor.purpleColor()
+        } else {
+            navBarColorSwitched = true
+            navigationController?.navigationBar.barTintColor = UIColor.blue
+            LoginVC.backgroundColor = UIColor.yellowColor()
+        }
     }
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

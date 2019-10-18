@@ -25,7 +25,7 @@ class FeedVC: UIViewController  {
     
 
     override func viewDidLoad() {
-        // vcDelegate2 = self // PART 3 CODE
+        vcDelegate2 = self as! VCDelegate // PART 3 CODE
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
@@ -40,7 +40,7 @@ class FeedVC: UIViewController  {
     func setupArrayOfSnaps() {
         arrayOfSnaps = []
         /* PART 2B START */
-        
+        arrayOfSnaps.append(<#T##newElement: SnapImage##SnapImage#>)
         
         /* PART 2B FINISH */
         tableView.reloadData()
@@ -65,7 +65,8 @@ class FeedVC: UIViewController  {
     
     
     /* PART 3C START (Hint: Define a function, that's already used in part 3 code) */
-    
+    func changeColors(_ vcDel : VCDelegate) {
+    }
     /* PART 3C FINISH */
     
     

@@ -10,9 +10,13 @@ import FirebaseStorage
 
 class FirebaseAPIClient {
     
+    var ref: DatabaseReference!
+
+    ref = Database.database().reference()
+    
     static func getSnaps(completion: @escaping ([SnapImage]) -> ()) {
         /* PART 2A START */
-        
+        Firebase
         /* PART 2A FINISH */
     }
 }
